@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="/Assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Petsential</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Rubik+Moonrocks&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900&display=swap');
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .body-container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            padding: 10px; 
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex: 1;
+            width: 50%;
+            box-shadow: 0px 100px 50px rgba(0, 0, 0, 0.3);  
+            border-radius: 50px 50px 50px 50px; 
+        }
+
+        .gif-container img {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        .cont {
+            background-color: #F8853E;
+            padding: 5px;
+            min-height: calc(100vh - 22px); 
+            border-radius: 0px 50px 50px 0px;
+            box-shadow: 0px 100px 50px rgba(0, 0, 0, 0.3);
+            flex: 0 0 50%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bodyc {
+            position: relative;
+            top: 50px;
+        }
+
+        .label {
+            font-family: "Rubik Moonrocks";
+            color: #FDD995;
+            font-size: 88px;
+            position: relative;
+            bottom: 60px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 130px;
+            margin-left: 20px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .btn-submit {
+            width: 250px;
+            background-color: #FDD995;
+            color: black;
+            font-size: 16px;
+            padding: 12px 0;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-submit:hover {
+            background-color: #fad38c;
+        }
+
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 14px;
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            background-color: white !important; 
+            color: #333; 
+            border: 1px solid #ccc;
+        }
+
+        .form-control::placeholder {
+            color: #F99A54;
+            opacity: 0.5;
+        }
+
+        .form-container {
+            position: relative;
+            bottom: 0px;
+        }
+
+        .divider-line {
+            position: relative;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            margin-top: 30px;
+            margin-left: 20%;
+            margin-right: 20%;
+            position: relative;
+            bottom: 18px;
+        }
+
+        .divider-line::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: rgba(0, 0, 0, 0.452);
+            opacity: 0.4; 
+            z-index: 0; 
+        }
+
+        .divider-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 1;
+            margin: 0 28px; 
+            border: 7px solid #F8853E; 
+            box-shadow: 0 0 0 0.5px black; 
+        }
+
+        .Login {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 10px;
+        }
+
+        .Login-container {
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
+            position: relative;
+            top: 10px;
+        }
+
+        .password-container {
+            position: relative;
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            color: #F99A54;
+        }
+
+        .input-icon {
+            background-image: url('/Assets/login-icons/user.png');
+            background-repeat: no-repeat;
+            background-position: 10px center; 
+            background-size: 20px 20px;
+            padding-left: 40px; 
+        }
+
+        .password-icon {
+            background-image: url('/Assets/login-icons/lock.png');
+            background-repeat: no-repeat;
+            background-position: 10px center; 
+            background-size: 20px 20px;
+            padding-left: 40px;
+        }
+        
+        .forgot-password-link {
+            text-decoration: none;
+            font-size: 11px;
+            color: #047bb3;
+            font-family: "Roboto", sans-serif;
+            font-weight: 500;
+            position: relative;
+            bottom: 17px;
+            left: 80px;
+        }
+       
+        @media (max-width: 768px) {
+            .cont {
+                flex: 100%;
+                border-radius: 50px 50px 50px 50px;
+            }
+
+            .gif-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .label {
+                position: relative;
+                font-size: 70px;
+                bottom: 50px;
+            }
+
+            .logo{
+                width: 110px;
+                height: 120px;
+                margin-left: 20px;
+                position: relative;
+                bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="body-container">
+        <div class="gif-container">
+            <img src="/Assets/login-icons/runfox.gif" alt="Register Gif">
+        </div>
+
+        <div class="cont">
+            <div class="bodyc">
+                <img src="/Assets/logo.png" alt="Petsential Logo" class="logo">  
+                <h1 class="label">Petsential</h1>
+
+                <div class="form-container">
+                    <form action="#" method="POST">
+                        <div class="mb-3">   
+                            <input type="text" class="form-control input-icon" id="username" name="username" placeholder="Username" required>
+                        </div>
+                      
+                        <div class="mb-3 password-container">
+                            <input type="password" class="form-control password-icon" id="password" name="password" placeholder="Password" required>
+                            <i class="bi bi-eye-slash eye-icon" id="togglePassword" onclick="togglePassword()"></i>
+                        </div>     
+                        
+                        <div class="text-center">
+                            <a href="" class="forgot-password-link">Forgot password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">Log in</button>
+                    </form>
+
+                    <div class="Login-container">
+                        <p class="Login" style="margin-right: 3px;">Don't have An Account? </p>
+                        <a class="Login" style="position: relative; bottom: 8px; text-decoration: none; color: #047bb3;" href="/prac/index1.html">Register</a>
+                    </div>
+                    <div class="divider-line">
+                        <a href="">
+                            <img class="divider-img" src="/Assets/oauth-icon/image1.png" alt="Image 1">
+                        </a>
+                        <a href="">
+                            <img class="divider-img" src="/Assets/oauth-icon/image2.png" alt="Image 2">
+                        </a>
+                        <a href="">
+                            <img class="divider-img" src="/Assets/oauth-icon/image3.png" alt="Image 3">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var password = document.getElementById("password");
+            var togglePassword = document.getElementById("togglePassword");
+            if (password.type === "password") {
+                password.type = "text";
+                togglePassword.classList.remove("bi-eye-slash");
+                togglePassword.classList.add("bi-eye");
+            } else {
+                password.type = "password";
+                togglePassword.classList.remove("bi-eye");
+                togglePassword.classList.add("bi-eye-slash");
+            }
+        }
+
+    </script>
+</body>
+</html>
